@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="clone">普通克隆</button>
+    <button class="deep-clone">进阶克隆</button>
+    <div class="box">
+        <button>点击</button>
+    </div>
+    <script>
+        $('.box button').click(function () {
+            $(this).parent().css('backgroundColor', 'orange')
+        })
+        //普通克隆
+        $('.clone').click(function () {
+            let $clone = $('.box').clone()
+            $('body').append($clone)
+        })
+        //进阶克隆
+        $('.deep-clone').click(function () {
+            let $clone = $('.box').clone(true)
+            $('body').append($clone)
+        })
+    </script>
+</body>
+
+</html>
